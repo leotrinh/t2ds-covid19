@@ -5,9 +5,10 @@ Statistic of COVID-19 in Viet Nam 2021
 
 
 ## Authors
-
+Frontend
 - [@Leo Trịnh](https://www.facebook.com/leo.trinh.6890/)
-
+API
+- [@TrungNV](https://www.facebook.com/trungsociupro/)
   
 ## Tech Stack
 
