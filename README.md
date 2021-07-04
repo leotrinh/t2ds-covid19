@@ -1,15 +1,13 @@
 
 # VN COVID-19
 
-Statistic of COVID-19 in Viet Nam 2021
+Statistic of COVID-19 in Viet Nam 2021 using ChartJs
 ## Authors
-Frontend
-- [@Leo Trịnh](https://www.facebook.com/leo.trinh.6890/)
-Backend API
-- [@TrungNV](https://www.facebook.com/trungsociupro/)
+- [@Leo Trịnh](https://www.facebook.com/leo.trinh.6890/) Frontend
+- [@TrungNV](https://www.facebook.com/trungsociupro/) Backend API
 ## Tech Stack
 
-**Client:** HTML, Javascript, JQuery, Bootstrap
+**Client:** HTML, Javascript, JQuery, Bootstrap, ChartJs
 
   
 ## Develop 
