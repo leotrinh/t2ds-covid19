@@ -1,184 +1,187 @@
 <!DOCTYPE html>
 <html lang="jp">
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-  <title>
-    Thống kê COVID-19 Việt Nam hôm nay
-  </title>
-  <meta name="author" content="Leo Trịnh">
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:site_name" content="Thống kê COVID-19 Việt Nam" />
-  <meta property="og:title" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
-  <meta property="twitter:title" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
-  <meta name="keywords" content="covid-19, covid-19 việt nam, covid-19 hồ chí minh" />
-  <meta name="description" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
-  <meta property="og:description" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
-  <meta property="twitter:description" content="Cập nhật tình hình COVID-19 tại Việt Nam hôm nay" />
-  <meta property="og:image" content="https://covid-19.tinhtd.info/src/static/images/covid-19.png" />
-  <meta property="twitter:image" content="https://covid-19.tinhtd.info/src/static/images/covid-19.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://covid-19.tinhtd.info" />
-  <link rel="stylesheet" href="./src/static/css/main.css">
-  <script src="./src/libs/jquery.3.6.0.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="./src/libs/bootstrap.4.1.3.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
-
-<body>
-  <div id="overlay">
-    <div class="row center-screen">
-      <img src="./src/static/images/loading-buffering.gif" />
-      <h3>Đang tải dữ liệu</h3>
-    </div>
-  </div>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light shadow fixed-top">
-    <div class="navbar-brand mb-0 h1">
-      <i class="fas fa-chart-bar"></i> <a class="navbar-brand" href="#" id="head-title">Thống kê COVID-19 Việt Nam mới
-        nhất</a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="" target="_blank">
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container-fluid mt-10 pl-4 pr-4">
-    <div class="row mb-1 bg-light content">
-      <div class="col-lg-6 col-sm-12">
-        <canvas id="summary"></canvas>
-        <div class="row pl-3 mt-3">
-          <h3 id="head-sum">Thống kê toàn quốc</h3>
-        </div>
-        <div class="row">
-          <div class="col-6 col-update-number">
-            <label class="alert alert-warning mr-3 mb-3">
-              <div class="thong-ke-label-update-number">Số ca lây nhiễm<span class="badge badge-warning ml-2"
-                  id="num-infected">0</span></div>
-            </label>
-          </div>
-          <div class="col-6 col-update-number">
-            <label class="alert alert-primary mr-3 mb-3">
-              <div class="thong-ke-label-update-number">Đang điều trị<span class="badge badge-info ml-2" id="num-treated">0</span></div>
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 col-update-number">
-            <label class="alert alert-success mr-3 mb-3">
-              <div class="thong-ke-label-update-number">Đã hồi phục<span class="badge badge-success ml-2"
-                id="num-recovered">0</span></div>
-            </label>
-          </div>
-          <div class="col-6 col-update-number">
-            <label class="alert alert-danger mr-3 mb-3">
-              <div class="thong-ke-label-update-number">Số ca tử vong<span class="badge badge-danger ml-2"
-                id="num-deceased">0</span></div>
-            </label>
-          </div>
-        </div>
-        <!--end-->
+   <head>
+      <meta charset="UTF-8">
+      <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+      <title>
+         Thống kê COVID-19 Việt Nam hôm nay
+      </title>
+      <meta name="author" content="Leo Trịnh">
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:site_name" content="Thống kê COVID-19 Việt Nam" />
+      <meta property="og:title" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
+      <meta property="twitter:title" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
+      <meta name="keywords" content="covid-19, covid-19 việt nam, covid-19 hồ chí minh" />
+      <meta name="description" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
+      <meta property="og:description" content="Thống kê tình hình COVID-19 tại Việt Nam hôm nay" />
+      <meta property="twitter:description" content="Cập nhật tình hình COVID-19 tại Việt Nam hôm nay" />
+      <meta property="og:image" content="https://covid-19.tinhtd.info/src/static/images/covid-19.png" />
+      <meta property="twitter:image" content="https://covid-19.tinhtd.info/src/static/images/covid-19.png" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://covid-19.tinhtd.info" />
+      <link rel="stylesheet" href="./src/static/css/main.css">
+      <script src="./src/libs/jquery.3.6.0.min.js"
+         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="./src/libs/bootstrap.4.1.3.min.css"
+         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   </head>
+   <body>
+      <div id="overlay">
+         <div class="row center-screen">
+            <img src="./src/static/images/loading-buffering.gif" />
+            <h3>Đang tải dữ liệu</h3>
+         </div>
       </div>
-      <div class="col-lg-6 col-sm-12">
-        <div class="col-lg-6 col-sm-12">
-          <h3>Xem theo Khu Vực/ Thành Phố/ Tỉnh</h3>
-          <input type="text" id="ctyInput" onkeyup="filterCity()" placeholder="Nhập tên thành phố.."
-            title="Thống kê theo thành phố">
-          <div class="city-content">
-            <ul id="cityLst">
-              <li><a onclick="onCitySelected('')">Toàn quốc</a></li>
+      <nav class="navbar navbar-expand-sm navbar-light bg-light shadow fixed-top">
+         <div class="navbar-brand mb-0 h1">
+            <i class="fas fa-chart-bar"></i> <a class="navbar-brand" href="#" id="head-title">Thống kê COVID-19 Việt Nam mới
+            nhất</a>
+         </div>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="" target="_blank">
+                  <span class="sr-only">(current)</span>
+                  </a>
+               </li>
             </ul>
-          </div>
-        </div>
-        <div class="col-lg-6 col-sm-12">
-
-        </div>
-
+         </div>
+      </nav>
+      <div class="container-fluid mt-10 pl-4 pr-4">
+         <div class="row mb-1 bg-light content">
+            <div class="col-lg-6 col-sm-12">
+               <canvas id="summary"></canvas>
+               <div class="row pl-3 mt-3">
+                  <h3 id="head-sum">Thống kê toàn quốc</h3>
+               </div>
+               <div class="row">
+                  <div class="col-6 col-update-number">
+                     <label class="alert alert-warning mr-3 mb-3">
+                        <div class="thong-ke-label-update-number">Số ca lây nhiễm<span class="badge badge-warning ml-2"
+                           id="num-infected">0</span></div>
+                     </label>
+                  </div>
+                  <div class="col-6 col-update-number">
+                     <label class="alert alert-primary mr-3 mb-3">
+                        <div class="thong-ke-label-update-number">Đang điều trị<span class="badge badge-info ml-2"
+                           id="num-treated">0</span></div>
+                     </label>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-6 col-update-number">
+                     <label class="alert alert-success mr-3 mb-3">
+                        <div class="thong-ke-label-update-number">Đã hồi phục<span class="badge badge-success ml-2"
+                           id="num-recovered">0</span></div>
+                     </label>
+                  </div>
+                  <div class="col-6 col-update-number">
+                     <label class="alert alert-danger mr-3 mb-3">
+                        <div class="thong-ke-label-update-number">Số ca tử vong<span class="badge badge-danger ml-2"
+                           id="num-deceased">0</span></div>
+                     </label>
+                  </div>
+               </div>
+               <!--end-->
+            </div>
+            <div class="col-lg-6 col-sm-12">
+               <div class="row">
+                  <div class="col-lg-6 col-sm-12">
+                     <!-- <h3>Xem theo Khu Vực/ Thành Phố/ Tỉnh</h3> -->
+                     <input type="text" id="ctyInput" onkeyup="filterCity()" placeholder="Nhập tên thành phố.."
+                        title="Thống kê theo thành phố">
+                     <div class="city-content">
+                        <ul id="cityLst">
+                           <li><a onclick="onCitySelected('')">Toàn quốc</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-12">
+                     <!-- <h3>Xem theo Khu Vực/ Thành Phố/ Tỉnh</h3> -->
+                     <div id="map-vn"></div>
+                     <div class="ads-container">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:inline-block;width:441px;height:280px"
+                           data-ad-client="ca-pub-7578831646037454" data-ad-slot="3227117073"></ins>
+                        <script>
+                           (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-
-
-    </div>
-
-  </div>
-  <!-- Footer -->
-  <footer class="text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Report Issues: <a href="mailto:tinhtd.info@gmail.com" target="_blank">tinhtd.info@gmail.com</a></span>
-      </div>
-      <!-- Left -->
-
-      <!-- Right -->
-      <div>
-        <a href="https://github.com/leotrinh/t2ds-covid19/" class="me-4 text-reset" target="_blank">
-          Get this source
-        </a>
-        <span> | </span>
-        <a href="https://www.facebook.com/leo.trinh.6890/" class="me-4 text-reset" target="_blank">
-          Facebook
-        </a>
-        <span> | </span>
-        <a href="https://shp.ee/hjrs4im" class="me-4 text-reset" target="_blank">
-          Mã giảm giá Shopee
-        </a>
-        <span> | </span>
-        <a href="https://nghiengiamgia.com/azdigi" class="me-4 text-reset" target="_blank">
-          Hosting 50k
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Dev by:
-      <a class="text-reset fw-bold" href="https://tinhtd.info" target="_blank">Leo Trịnh</a> -
-      API by: <a href="https://www.facebook.com/trungsociupro/" target="_blank">TrungNV</a>
-
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Core Lib, Func -->
-
-  <script src="./src/libs/popper.1.14.3.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="./src/libs/bootstrap.4.1.3.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script src="./src/libs/chartjs3.4.0.min.js"></script>
-  <script src="./src/features/config.js"></script>
-  <script src="./src/features/core.js"></script>
-  <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-7578831646037454",
-      enable_page_level_ads: true
-    });
-  </script>
-
-  <script async='async' src='https://www.googletagmanager.com/gtag/js?id=UA-135355873-1'></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-135355873-1');
-  </script>
-</body>
-
+      <!-- Footer -->
+      <footer class="text-center text-lg-start bg-light text-muted">
+         <!-- Section: Social media -->
+         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+               <span>Nguồn: <a href="https://ncov.moh.gov.vn/" target="_blank">https://ncov.moh.gov.vn</a></span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+            <div>
+               <a href="https://github.com/leotrinh/t2ds-covid19/" class="me-4 text-reset" target="_blank">
+               Get this source
+               </a>
+               <span> | </span>
+               <a href="https://www.facebook.com/leo.trinh.6890/" class="me-4 text-reset" target="_blank">
+               Facebook
+               </a>
+               <span> | </span>
+               <a href="https://shp.ee/hjrs4im" class="me-4 text-reset" target="_blank">
+               Mã giảm giá Shopee
+               </a>
+               <span> | </span>
+               <a href="https://nghiengiamgia.com/azdigi" class="me-4 text-reset" target="_blank">
+               Hosting 50k
+               </a>
+            </div>
+            <!-- Right -->
+         </section>
+         <!-- Section: Social media -->
+         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Dev by:
+            <a class="text-reset fw-bold" href="https://tinhtd.info" target="_blank">Leo Trịnh</a> -
+            API by: <a href="https://www.facebook.com/trungsociupro/" target="_blank">TrungNV</a>
+         </div>
+         <!-- Copyright -->
+      </footer>
+      <!-- Core Lib, Func -->
+      <script src="./src/libs/popper.1.14.3.min.js"
+         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+         crossorigin="anonymous"></script>
+      <script src="./src/libs/bootstrap.4.1.3.min.js"
+         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+         crossorigin="anonymous"></script>
+      <script src="./src/libs/chartjs3.4.0.min.js"></script>
+      <script src="./src/libs/maps/highmaps.js"></script>
+      <script src="./src/libs/maps/exporting.js"></script>
+      <script src="./src/libs/maps/vn-all.js"></script>
+      <script src="./src/features/config.js"></script>
+      <script src="./src/features/core.js"></script>
+      <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>
+      <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-7578831646037454",
+           enable_page_level_ads: true
+         });
+      </script>
+      <script async='async' src='https://www.googletagmanager.com/gtag/js?id=UA-135355873-1'></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() { dataLayer.push(arguments); }
+         gtag('js', new Date());
+         
+         gtag('config', 'UA-135355873-1');
+      </script>
+   </body>
 </html>

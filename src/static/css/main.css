@@ -90,6 +90,17 @@ body {
         #00c6ff
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+  .loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+}
   .col-update-number label{
     width: 100%;
+  }
+  #map-vn{
+    height: 500px;
+    min-width: 240px;
+    max-width: 800px;
+    margin: 0 auto;
   }
