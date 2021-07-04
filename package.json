@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "browser-sync start --server --files",
-    "build": "rm -rf dist && mkdir dist && cp -r ./index.html ./dist/index.html  && cp -r ./src ./dist/src && javascript-obfuscator ./src/features --output ./dist/src/features"
+    "build": "rm -rf dist && mkdir dist && cp -r ./index.html ./dist/index.html && cp -r ./favicon.ico ./dist/favicon.ico  && cp -r ./src ./dist/src && javascript-obfuscator ./src/features --output ./dist/src/features"
   },
   "dependencies": {
    
