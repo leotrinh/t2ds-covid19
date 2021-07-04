@@ -62,33 +62,34 @@
         <div class="row pl-3 mt-3">
           <h3 id="head-sum">Thống kê toàn quốc</h3>
         </div>
-        <div class="row pl-3 mt-3">
-          <form class="form-inline"><label class="alert alert-warning mr-3 mb-3">
-              <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" checked="">
-                <div class="form-check-label">Số ca lây nhiễm<span class="badge badge-warning ml-2"
-                    id="num-infected">0</span></div>
-              </div>
+        <div class="row">
+          <div class="col-6 col-update-number">
+            <label class="alert alert-warning mr-3 mb-3">
+              <div class="thong-ke-label-update-number">Số ca lây nhiễm<span class="badge badge-warning ml-2"
+                  id="num-infected">0</span></div>
             </label>
+          </div>
+          <div class="col-6 col-update-number">
             <label class="alert alert-primary mr-3 mb-3">
-              <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" checked="">
-                <div class="form-check-label">Đang điều trị<span class="badge badge-info ml-2" id="num-treated">0</span>
-                </div>
-              </div>
+              <div class="thong-ke-label-update-number">Đang điều trị<span class="badge badge-info ml-2" id="num-treated">0</span></div>
             </label>
-            <label class="alert alert-success mr-3 mb-3">
-              <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" checked="">
-                <div class="form-check-label">Đã hồi phục<span class="badge badge-success ml-2"
-                    id="num-recovered">0</span></div>
-              </div>
-            </label>
-            <label class="alert alert-danger mr-3 mb-3">
-              <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" checked="">
-                <div class="form-check-label">Số ca tử vong<span class="badge badge-danger ml-2"
-                    id="num-deceased">0</span></div>
-              </div>
-            </label>
-          </form>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-6 col-update-number">
+            <label class="alert alert-success mr-3 mb-3">
+              <div class="thong-ke-label-update-number">Đã hồi phục<span class="badge badge-success ml-2"
+                id="num-recovered">0</span></div>
+            </label>
+          </div>
+          <div class="col-6 col-update-number">
+            <label class="alert alert-danger mr-3 mb-3">
+              <div class="thong-ke-label-update-number">Số ca tử vong<span class="badge badge-danger ml-2"
+                id="num-deceased">0</span></div>
+            </label>
+          </div>
+        </div>
+        <!--end-->
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="col-lg-6 col-sm-12">
@@ -102,7 +103,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-sm-12">
-          
+
         </div>
 
       </div>
@@ -117,21 +118,25 @@
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
       <div class="me-5 d-none d-lg-block">
-        <span>Github Source: <a href="https://github.com/leotrinh/t2ds-covid19/">Get this source</a></span>
+        <span>Report Issues: <a href="mailto:tinhtd.info@gmail.com" target="_blank">tinhtd.info@gmail.com</a></span>
       </div>
       <!-- Left -->
 
       <!-- Right -->
       <div>
-        <a href="https://www.facebook.com/leo.trinh.6890/" class="me-4 text-reset">
+        <a href="https://github.com/leotrinh/t2ds-covid19/" class="me-4 text-reset" target="_blank">
+          Get this source
+        </a>
+        <span> | </span>
+        <a href="https://www.facebook.com/leo.trinh.6890/" class="me-4 text-reset" target="_blank">
           Facebook
         </a>
         <span> | </span>
-        <a href="https://shp.ee/hjrs4im" class="me-4 text-reset">
+        <a href="https://shp.ee/hjrs4im" class="me-4 text-reset" target="_blank">
           Mã giảm giá Shopee
         </a>
         <span> | </span>
-        <a href="https://nghiengiamgia.com/azdigi" class="me-4 text-reset">
+        <a href="https://nghiengiamgia.com/azdigi" class="me-4 text-reset" target="_blank">
           Hosting 50k
         </a>
       </div>
@@ -141,7 +146,7 @@
 
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2021 Dev by:
-      <a class="text-reset fw-bold" href="https://tinhtd.info">Leo Trịnh</a> -
+      <a class="text-reset fw-bold" href="https://tinhtd.info" target="_blank">Leo Trịnh</a> -
       API by: <a href="https://www.facebook.com/trungsociupro/" target="_blank">TrungNV</a>
 
     </div>

@@ -9,7 +9,7 @@ const oT2DSCoreFunc = {
     let currUrlString = window.location.href;
     let url = new URL(currUrlString);
     let location = url.searchParams.get("location");
-    if(location){
+    if (location) {
       this.getLatestDataAndBuildChart(location);
       return;
     }
@@ -21,7 +21,7 @@ const oT2DSCoreFunc = {
       latestUpdate;
     document.title = msgTitle;
     $("#head-title")[0].text = msgTitle;
-    $("#head-title").attr("href",appUrl);
+    $("#head-title").attr("href", appUrl);
   },
   getLatestDataAndBuildChart: function (city) {
     const that = this;
@@ -44,7 +44,7 @@ const oT2DSCoreFunc = {
                 deceased: latest.socatuvong,
                 lastUpdatedAtSource: json.lastUpdatedAtSource,
               };
-            }else{
+            } else {
               //for empty
               source = {
                 infected: 0,
@@ -53,7 +53,6 @@ const oT2DSCoreFunc = {
                 deceased: 0,
                 lastUpdatedAtSource: json.lastUpdatedAtSource,
               };
-              
             }
           }
           that.buildSummaryChart(source);
@@ -111,24 +110,24 @@ const oT2DSCoreFunc = {
   buildSummaryChart: function (source) {
     let latestUpdate = this._formatDate(source.lastUpdatedAtSource);
     this.updateMetadata(latestUpdate);
+    const {infected, treated, recovered, deceased} = source;
     this.updateNumber(
-      source.infected,
-      source.treated,
-      source.recovered,
-      source.deceased
+      infected, treated, recovered, deceased
     );
     var oSumData = {
-      labels: ["Số ca lây nhiễm", "Đang điều trị", "Đã hồi phục", "Số ca tử vong"],
+      labels: [
+        "Số ca lây nhiễm",
+        "Đang điều trị",
+        "Đã hồi phục",
+        "Số ca tử vong",
+      ],
       datasets: [
         {
           label: "Số người",
           data: [
-            source.infected,
-            source.treated,
-            source.recovered,
-            source.deceased,
+            infected, treated, recovered, deceased
           ],
-          backgroundColor: ["#ffc107", "#17a2b8", "#28a745", "#dc3545"]
+          backgroundColor: ["#ffc107", "#17a2b8", "#28a745", "#dc3545"],
         },
       ],
     };
@@ -144,13 +143,17 @@ const oT2DSCoreFunc = {
       });
     }
   },
-  showBusy: function() {
+  showBusy: function () {
     $("#overlay").show();
   },
-  hideBusy: function() {
+  hideBusy: function () {
     $("#overlay").hide();
   },
-  updateNumber: function (infected,treated,recovered,deceased) {
+  updateNumber: function (infected, treated, recovered, deceased) {
+    infected = this.numberWithCommas(infected);
+    treated = this.numberWithCommas(treated);
+    recovered = this.numberWithCommas(recovered);
+    deceased = this.numberWithCommas(deceased);
     $("#num-infected").text(infected);
     $("#num-treated").text(treated);
     $("#num-recovered").text(recovered);
@@ -185,6 +188,9 @@ const oT2DSCoreFunc = {
 
     today = mm + "/" + dd + "/" + yyyy;
     return today;
+  },
+  numberWithCommas: function (value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   },
   getExistItemsInArray: function (aSArray, sColumn, sKeyVal) {
     let aItems = aSArray.filter(function (obj) {
