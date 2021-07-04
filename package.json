@@ -1,0 +1,16 @@
+{
+  "name": "t2ds-covid19",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "browser-sync start --server --files",
+    "build": "rm -rf dist && mkdir dist && cp -r ./index.html ./dist/index.html  && cp -r ./src ./dist/src && javascript-obfuscator ./src/features --output ./dist/src/features"
+  },
+  "dependencies": {
+   
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^2.15.5",
+    "browser-sync": "^2.27.3"
+  }
+}
