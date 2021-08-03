@@ -122,12 +122,12 @@ const oT2DSCoreFunc = {
                               '<div class="p-2 bd-highlight t2ds-city"><span class="t2ds-city__name">'+city['title']+'</span></div>'+
                               '<div class="p-2 bd-highlight">'+
                               '<label class="alert alert-danger mr-3 mb-3">'+
-                              '<div class="thong-ke-label-update-number">Tổng <span class="badge badge-danger ml-2">'+this.numberWithCommas(city.confirmed)+'%</span></div>'+
+                              '<div class="thong-ke-label-update-number">Tổng <span class="badge badge-danger ml-2">'+this.numberWithCommas(city.confirmed)+'</span></div>'+
                                '</label>'+
                                '</div>'+
                                '<div class="p-2 bd-highlight">'+
                               '<label class="alert alert-warning mr-3 mb-3">'+
-                              '<div class="thong-ke-label-update-number">Vaccine mũi 1 <span class="badge badge-warning ml-2">'+this.numberWithCommas(city.incconfirmed)+'%</span></div>'+
+                              '<div class="thong-ke-label-update-number">Vaccine mũi 1 <span class="badge badge-warning ml-2">'+this.numberWithCommas(city.incconfirmed)+'</span></div>'+
                                '</label>'+
                                '</div>'+
                               '<div class="p-2 bd-highlight">'+
