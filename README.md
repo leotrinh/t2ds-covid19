@@ -4,7 +4,7 @@
 Statistic of COVID-19 in Viet Nam 2021 using ChartJs
 ## Authors
 - [@Leo Trịnh](https://www.facebook.com/leo.trinh.6890/) Frontend
-- [@TrungNV](https://www.facebook.com/trungsociupro/) Backend API
+- [@Báo Thanh Niên](https://thanhnien.vn/e-magazine/toan-canh-covid-19-tin-tuc-so-lieu-phan-tich-1265104.html) Backend API
 ## Tech Stack
 
 **Client:** HTML, Javascript, JQuery, Bootstrap, ChartJs

@@ -1,106 +1,133 @@
 body {
-    background: #00c6ff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #0072ff,
-        #00c6ff
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-size: 2rem !important;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 2rem !important;
 }
 .bg-white {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
-.navbar-brand{
-    display: inline-block;
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
-    margin-right: 1rem;
-    font-size: 2rem;
-    line-height: inherit;
-    white-space: nowrap;
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  line-height: inherit;
+  white-space: nowrap;
 }
-.container-fluid{
-    margin-top: 70px;
+.container-fluid {
+  margin-top: 70px;
 }
-.content{
-    padding-top: 15px;
+.content {
+  padding-top: 15px;
 }
-.city-content{
-    padding-top: 10px;
-    height: 600px;
-    overflow:auto;
+.city-content {
+  padding-top: 10px;
+  height: 700px;
+  overflow: auto;
 }
 #ctyInput {
-    background-image: url(../images/searchicon.png);
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-  }
-  
-  #cityLst {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #cityLst li a {
-    border: 1px solid #ddd;
-    margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block;
-    cursor: pointer;
-  }
-  
-  #cityLst li a:hover:not(.header) {
-    background-color: #eee;
-  }
-  #overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-   
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-   
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-  }
-  .center-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    background: #00c6ff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #0072ff,
-        #00c6ff
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  .loading {
-    margin-top: 10em;
-    text-align: center;
-    color: gray;
+  background-image: url(../images/searchicon.png);
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
 }
-  .col-update-number label{
-    width: 100%;
-  }
-  #map-vn{
-    height: 500px;
-    min-width: 240px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+
+#cityLst {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cityLst li a {
+  border: 1px solid #f4a9b0;
+  margin-top: -1px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  cursor: pointer;
+}
+#cityLst li label {
+  cursor: pointer;
+}
+
+
+.text-red {
+  color: #f70202;
+}
+.text-blue {
+  color: #17a2b8;
+}
+.text-green {
+  color: #28a745;
+}
+.city-all {
+  background: #721c24;
+  border: 1px solid #721c24 !important;
+}
+.city-all span {
+  color: white;
+  padding-left: 1.5rem !important;
+}
+.city-all span:hover{
+  color: black;
+}
+.t2ds-city {
+  background: #f4a9b0;
+}
+.t2ds-city__name {
+  color: white;
+  padding-left: 1rem !important;
+}
+.t2ds-city__name:hover{
+  color: black;
+}
+.col-update-number label {
+  width: 100%;
+}
+#map-vn {
+  height: 500px;
+  min-width: 240px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.loading {
+  margin-top: 10em;
+  text-align: center;
+  color: gray;
+}

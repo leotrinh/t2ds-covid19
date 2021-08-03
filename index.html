@@ -87,6 +87,19 @@
                            id="num-deceased">0</span></div>
                      </label>
                   </div>
+                  <div class="col-6 col-update-number">
+                     <label class="alert alert-primary mr-3 mb-3">
+                        <div class="thong-ke-label-update-number">Vaccine mũi 1 <span class="badge badge-info ml-2"
+                           id="vac-1">0</span></div>
+                     </label>
+                  </div>
+                  <div class="col-6 col-update-number">
+                  
+                     <label class="alert alert-success mr-3 mb-3">
+                        <div class="thong-ke-label-update-number">Vaccine đủ liều<span class="badge badge-success ml-2"
+                           id="vac-full">0</span></div>
+                     </label>
+                  </div>
                </div>
                <!--end-->
             </div>
@@ -98,7 +111,7 @@
                         title="Thống kê theo thành phố">
                      <div class="city-content">
                         <ul id="cityLst">
-                           <li><a onclick="onCitySelected('')">Toàn quốc</a></li>
+                           <li><a onclick="onCitySelected('')" class="city-all"><span>Toàn quốc</span></a></li>
                         </ul>
                      </div>
                   </div>
@@ -124,7 +137,7 @@
          <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
             <div class="me-5 d-none d-lg-block">
-               <span>Nguồn: <a href="https://ncov.moh.gov.vn/" target="_blank">https://ncov.moh.gov.vn</a></span>
+               <span>Nguồn: <a href="https://thanhnien.vn/" target="_blank">Báo Thanh Niên</a></span>
             </div>
             <!-- Left -->
             <!-- Right -->
@@ -151,7 +164,7 @@
          <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2021 Dev by:
             <a class="text-reset fw-bold" href="https://tinhtd.info" target="_blank">Leo Trịnh</a> -
-            API by: <a href="https://www.facebook.com/trungsociupro/" target="_blank">TrungNV</a>
+            API by: <a href="https://thanhnien.vn/" target="_blank">ThanhNien</a>
          </div>
          <!-- Copyright -->
       </footer>
@@ -168,6 +181,7 @@
       <script src="./src/libs/maps/vn-all.js"></script>
       <script src="./src/libs/moment.2.29.1.min.js"></script>
       <script src="./src/features/config.js"></script>
+      <script src="./src/features/HttpHelper.js"></script>
       <script src="./src/features/core.js"></script>
       <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>
       <script>
