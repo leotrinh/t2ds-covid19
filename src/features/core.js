@@ -127,7 +127,7 @@ const oT2DSCoreFunc = {
                                '</div>'+
                                '<div class="p-2 bd-highlight">'+
                               '<label class="alert alert-warning mr-3 mb-3">'+
-                              '<div class="thong-ke-label-update-number">Vaccine mũi 1 <span class="badge badge-warning ml-2">'+this.numberWithCommas(city.incconfirmed)+'</span></div>'+
+                              '<div class="thong-ke-label-update-number">Số ca hôm nay <span class="badge badge-warning ml-2">'+this.numberWithCommas(city.incconfirmed)+'</span></div>'+
                                '</label>'+
                                '</div>'+
                               '<div class="p-2 bd-highlight">'+
